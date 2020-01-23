@@ -3,7 +3,9 @@ li {
   margin: 5px;
   background: #faebd7;
 }
-
+body{
+  background-color: #faebd7;
+}
 .label {
   font-weight: bold;
 }

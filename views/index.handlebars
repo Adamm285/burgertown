@@ -1,38 +1,84 @@
-<h1>burgers!</h1>
+<div class="container">
 
-<h2>burgers that are not devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devour=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>burgers that are devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devour=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">burger Name:</label>
-    <input type="text" id="ca" name="name">
+  <div class="jumbotron text-white bg-warning mb-3">
+    <h1>Burgers Inc!</h1>
+    <hr>
+    <h2>Burgers that can be devoured!</h2>
   </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <img
+        src="https://image.myanimelist.net/ui/G-Sm6d0qIwQxUGHIp-m2WMqTqUS3-oxgDHc8yziEUZQBD1tAoojEXApSN4dD7zMTsa-Wz6B1SCGs2GycLvoF9J8ceGimDeqBOUK2ncGg9uAelimOHN9v_Y9a3Wuzzlog"
+        alt="burger time!">
+    </div>
+    <div class="col-sm-6">
+      <div class="card text-white bg-warning mb-3" style="max-width: 40rem;">
+        <div class="card-header">
+          <h2>Burgers that are not devoured!</h2>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">
+            <span>
+              <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                {{> burgers/burger-block devour=true}}
+                {{/unless}}
+                {{/each}}
+              </ul>
+            </span>
+          </h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-5">
+        <div class="card text-white bg-warning mb-3" style="max-width: 30rem;">
+          <div class="card-header">
+            <h2>Burgers that are devoured!</h2>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">
+              <span>
+                <ul>
+                  {{#each burgers}}
+                  {{#if devoured}}
+                  {{> burgers/burger-block devour=false}}
+                  {{/if}}
+                  {{/each}}
+                </ul>
+              </span>
+            </h3>
+          </div>
+        </div>
+      </div>
 
-  <div class="form-group">
-    <label for="devoured">devoured?</label><br>
-    <input type="radio" name="devoured" value="1" checked> devoured!<br>
-    <input type="radio" name="devoured" value="0"> Awake
+      <div class="col-sm-1"></div>
+      <div class="col-sm-5">
+        <div class="card text-white bg-warning mb-3" style="max-width: 30rem;">
+          <div class="card-header">
+            <h2>Add a Burger</h2>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">
+              <form class="create-form">
+                <div class="form-group">
+                  <label for="ca">Burger Name:</label>
+                  <input type="text" id="ca" name="name">
+                </div>
+                <div class="form-group">
+                  <label for="devoured">devoured?</label><br>
+                  <input type="radio" name="devoured" value="1" checked> yes<br>
+                  <input type="radio" name="devour" value="0"> no
+                </div>
+                <button type="submit">Add Burger</button>
+              </form>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    
   </div>
-
-  <button type="submit">Add burger</button>
-</form>
+</div>
