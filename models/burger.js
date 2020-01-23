@@ -14,8 +14,10 @@ var burger = {
     });
   },
   update: function(objColVals, condition, cb) {
+    console.log(objColVals)
     orm.update("burgers", objColVals, condition, function(res) {
       cb(res);
+      
     });
   },
   delete: function(condition, cb) {
